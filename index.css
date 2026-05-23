@@ -1531,25 +1531,129 @@ footer {
     transform: scale(1.15);
 }
 
-/* ========================================================
-   ESTILOS PARA CELULARES (Pantallas de 768px o menos)
-   ======================================================== */
+/* ==========================================================================
+   SISTEMA RESPONSIVO - MEDIA QUERIES (GOLDEN RAZOR)
+   ========================================================================== */
+
+/* 1. Ajustes para Tablets y pantallas medianas (Menor a 992px) */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem; /* Reducimos el tamaño gigante del título */
+    }
+    
+    .hero-slogan {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* 2. Ajustes críticos para Dispositivos Móviles (Menor a 768px) */
 @media (max-width: 768px) {
-    /* Si tus elementos o fotos se ven gigantes, haz que midan el 100% del ancho del teléfono */
-    .contenedor, section, main, div {
-        width: 100% !important;
-        box-sizing: border-box;
+    /* --- HEADER Y NAVEGACIÓN --- */
+    .header-container {
+        flex-direction: column; /* Apilamos logo y menú verticalmente */
+        gap: 15px;
+        padding: 15px 10px;
     }
 
-    /* Si tienes los barberos en fila, esto los acomoda uno debajo del otro */
-    .tu-contenedor-de-barberos {
-        display: flex;
-        flex-direction: column !important;
+    .logo-text {
+        align-items: center; /* Centramos el texto del logo en móviles */
     }
 
-    /* Asegura que ninguna imagen se salga de la pantalla del celular */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
+    .nav-links {
+        width: 100%;
+        justify-content: center; /* Centramos los botones del menú */
+        gap: 10px;
+    }
+
+    .nav-item {
+        font-size: 0.8rem;
+        padding: 6px 10px; /* Reducimos el padding para evitar desbordes */
+    }
+
+    /* Espaciado superior de las secciones (para que no queden tapadas por el header móvil que es más alto) */
+    .spa-section {
+        padding-top: 140px; 
+    }
+
+    /* --- HERO BANNER --- */
+    .hero-banner {
+        height: auto;
+        min-height: calc(100vh - 140px);
+        padding: 60px 20px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    /* --- CONTENEDORES GENERALES --- */
+    .section-container {
+        padding: 40px 15px; /* Reducimos los paddings exagerados de 80px */
+    }
+
+    /* --- COMPONENTES DE LA AGENDA --- */
+    .agenda-wrapper {
+        padding: 15px; /* Más espacio útil dentro de la tarjeta */
+    }
+
+    .barbers-tabs {
+        justify-content: center; /* Centrar pestañas de barberos */
+    }
+
+    .barber-tab {
+        width: 100%; /* Cada barbero ocupa toda la línea para fácil pulsación táctil */
+        justify-content: center;
+    }
+
+    .slots-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); /* Slots más compactos en móvil */
+        gap: 10px;
+    }
+
+    .slot-btn {
+        padding: 12px 8px;
+    }
+
+    .slot-time {
+        font-size: 0.95rem;
+    }
+
+    /* --- FORMULARIOS Y LOGIN --- */
+    .login-box {
+        padding: 25px 20px; /* Reducir padding en la tarjeta de login/admin */
+    }
+
+    /* --- TARJETA POPULAR (SERVICIOS) --- */
+    .special-card {
+        transform: none; /* Quitamos el scale(1.03) para evitar que rompa el flujo vertical en móviles */
+    }
+    .special-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* 3. Ajustes finos para teléfonos muy pequeños (Menor a 480px) */
+@media (max-width: 480px) {
+    .nav-links {
+        flex-wrap: wrap; /* Si la pantalla es muy angosta, el menú se divide en dos líneas limpiamente */
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    /* Galería de Tendencias - Forzar 1 sola columna estética */
+    .trends-gallery {
+        grid-template-columns: 1fr;
     }
 }
