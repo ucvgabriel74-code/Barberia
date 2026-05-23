@@ -1530,3 +1530,26 @@ footer {
     background: rgba(231, 76, 60, 0.15);
     transform: scale(1.15);
 }
+
+/* ========================================================
+   ESTILOS PARA CELULARES (Pantallas de 768px o menos)
+   ======================================================== */
+@media (max-width: 768px) {
+    /* Si tus elementos o fotos se ven gigantes, haz que midan el 100% del ancho del teléfono */
+    .contenedor, section, main, div {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* Si tienes los barberos en fila, esto los acomoda uno debajo del otro */
+    .tu-contenedor-de-barberos {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    /* Asegura que ninguna imagen se salga de la pantalla del celular */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
