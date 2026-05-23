@@ -1,0 +1,1532 @@
+/* 
+   GOLDEN RAZOR BARBERSHOP - DESIGN SYSTEM
+   Color Palette: Deep Black (#080808, #121212) & Metallic Gold (#D4AF37, #AA7C11, #FFF0A5)
+*/
+
+:root {
+    --bg-darkest: #060606;
+    --bg-darker: #0d0d0d;
+    --bg-dark: #141414;
+    --bg-card: rgba(26, 26, 26, 0.7);
+    --gold-primary: #D4AF37;
+    --gold-hover: #F3E5AB;
+    --gold-dark: #AA7C11;
+    --gold-gradient: linear-gradient(135deg, #FFF0A5 0%, #D4AF37 50%, #AA7C11 100%);
+    --gold-border: rgba(212, 175, 55, 0.25);
+    --gold-border-glow: rgba(212, 175, 55, 0.6);
+    --text-light: #F5F5F5;
+    --text-muted: #A0A0A0;
+    --status-available: #2ecc71;
+    --status-available-bg: rgba(46, 204, 113, 0.15);
+    --status-available-border: rgba(46, 204, 113, 0.4);
+    --status-booked: #7f8c8d;
+    --status-booked-bg: rgba(127, 140, 141, 0.15);
+    --status-booked-border: rgba(127, 140, 141, 0.3);
+    --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow-gold: 0 0 15px rgba(212, 175, 55, 0.15);
+    --shadow-gold-heavy: 0 0 25px rgba(212, 175, 55, 0.3);
+}
+
+/* Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-darkest);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Gold Text Utility */
+.gold-text {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-darkest);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-primary);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+/* Layout Containers */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Main Header & Navigation */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(6, 6, 6, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gold-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-smooth);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    gap: 15px;
+}
+
+.header-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-primary);
+    object-fit: cover;
+    box-shadow: var(--shadow-gold);
+}
+
+.gold-icon {
+    color: var(--gold-primary);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.logo-large {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-slogan {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--gold-primary);
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+/* SPA Sections management */
+.spa-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    padding-top: 80px; /* spacing for header */
+}
+
+.spa-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 12px 28px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+}
+
+.btn-large {
+    padding: 16px 36px;
+    font-size: 1rem;
+}
+
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+
+.btn-gold {
+    background: var(--gold-gradient);
+    color: #000;
+    box-shadow: var(--shadow-gold);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn-gold:hover::before {
+    left: 100%;
+}
+
+.btn-gold:hover {
+    box-shadow: var(--shadow-gold-heavy);
+    transform: translateY(-2px);
+    color: #000;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+}
+
+.btn-outline:hover {
+    background: var(--gold-gradient);
+    color: #000;
+    box-shadow: var(--shadow-gold);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #e74c3c;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+    box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
+    transform: translateY(-2px);
+}
+
+/* SECTION 1: INICIO STYLING */
+
+/* Hero Banner */
+.hero-banner {
+    height: 90vh;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/Inicio.png'); /* Falls back to dark styling if not loaded */
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid var(--gold-border);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(14, 14, 14, 0.6) 0%, rgba(6, 6, 6, 0.95) 85%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-badge {
+    font-size: 0.8rem;
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    padding: 5px 15px;
+    border-radius: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 25px;
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: var(--shadow-gold);
+    animation: pulse 2s infinite alternate;
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.hero-slogan {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    color: var(--gold-primary);
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Barber Team Grid */
+.barbers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.barber-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    padding: 35px 25px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.barber-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold-gradient);
+    transform: scaleX(0);
+    transition: var(--transition-smooth);
+    transform-origin: center;
+}
+
+.barber-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-border-glow);
+    box-shadow: var(--shadow-gold);
+}
+
+.barber-card:hover::after {
+    transform: scaleX(1);
+}
+
+.barber-avatar {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(170, 124, 17, 0.25) 100%);
+    border: 1px solid var(--gold-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2.2rem;
+    color: var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+    transition: var(--transition-smooth);
+}
+
+.barber-card:hover .barber-avatar {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: var(--shadow-gold-heavy);
+}
+
+.barber-name {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.barber-role {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.barber-badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 50px;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Trends Gallery */
+.trends-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.trend-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 350px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: var(--transition-smooth);
+}
+
+.trend-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.trend-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(transparent, rgba(6, 6, 6, 0.95));
+    transition: var(--transition-smooth);
+}
+
+.trend-title {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 5px;
+    transform: translateY(10px);
+    transition: var(--transition-smooth);
+}
+
+.trend-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: var(--transition-smooth);
+}
+
+.trend-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+}
+
+.trend-item:hover .trend-img {
+    transform: scale(1.08);
+}
+
+.trend-item:hover .trend-overlay {
+    background: linear-gradient(transparent, rgba(6, 6, 6, 0.98) 50%);
+}
+
+.trend-item:hover .trend-title {
+    transform: translateY(0);
+    color: var(--gold-primary);
+}
+
+.trend-item:hover .trend-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Services section styling */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 8px;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+    border-color: var(--gold-border-glow);
+    box-shadow: var(--shadow-gold-heavy);
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.service-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.service-price {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.service-desc {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Highlighted Special Card */
+.special-card {
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+    transform: scale(1.03);
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, rgba(26, 26, 26, 0.7) 100%);
+}
+
+.special-card:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.special-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold-gradient);
+    color: black;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 15px;
+    border-radius: 50px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* SECTION 2: AGENDA STYLING */
+.agenda-wrapper {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.agenda-controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .agenda-controls {
+        grid-template-columns: 300px 1fr;
+    }
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-primary);
+    font-weight: 600;
+}
+
+/* Inputs design */
+.date-input {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--gold-border);
+    border-radius: 4px;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 12px 15px;
+    transition: var(--transition-smooth);
+    outline: none;
+    width: 100%;
+}
+
+.date-input:focus {
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+}
+
+/* Selector tabs for barbers */
+.barbers-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.barber-tab {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    border-radius: 4px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.barber-tab:hover {
+    border-color: var(--gold-border);
+    color: white;
+}
+
+.barber-tab.active {
+    background: var(--gold-gradient);
+    color: black;
+    border-color: var(--gold-primary);
+    font-weight: 600;
+    box-shadow: var(--shadow-gold);
+}
+
+/* Slots grid styling */
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .schedule-header {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.schedule-header h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.legend {
+    display: flex;
+    gap: 15px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+}
+
+.color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.color-dot.available {
+    background-color: var(--status-available);
+    box-shadow: 0 0 5px var(--status-available);
+}
+
+.color-dot.booked {
+    background-color: var(--status-booked);
+}
+
+.slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* Individual Slot Card */
+.slot-btn {
+    background: var(--status-available-bg);
+    border: 1px solid var(--status-available-border);
+    border-radius: 6px;
+    padding: 18px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    color: white;
+}
+
+.slot-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+    border-color: var(--status-available);
+}
+
+.slot-time {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.slot-status {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: rgba(46, 204, 113, 0.2);
+    color: var(--status-available);
+    font-weight: 600;
+}
+
+/* Booked slot styling */
+.slot-btn.booked {
+    background: var(--status-booked-bg);
+    border-color: var(--status-booked-border);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.slot-btn.booked:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--status-booked-border);
+}
+
+.slot-btn.booked .slot-status {
+    background: rgba(127, 140, 141, 0.2);
+    color: var(--status-booked);
+}
+
+.slot-btn.booked .slot-time {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* SECTION 3: ADMINISTRADOR STYLING */
+
+/* Login Container */
+.login-box-wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 40px 20px;
+}
+
+.login-box-wrapper.active {
+    display: flex;
+}
+
+.login-box {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    padding: 45px 35px;
+    box-shadow: var(--shadow-gold-heavy);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-logo-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-primary);
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-gold);
+}
+
+.login-logo h2 {
+    font-size: 1.4rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-logo p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* General Form controls */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-group label i {
+    color: var(--gold-primary);
+}
+
+.form-control-input, .form-control-select {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--gold-border);
+    border-radius: 4px;
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 12px 15px;
+    transition: var(--transition-smooth);
+    outline: none;
+    width: 100%;
+}
+
+.form-control-input:focus, .form-control-select:focus {
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+}
+
+.form-control-select option {
+    background-color: var(--bg-darkest);
+    color: white;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+}
+
+/* Dashboard view wrapper */
+.dashboard-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 20px;
+}
+
+.welcome-text h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.welcome-text p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Grid layout for Panels */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+    }
+}
+
+.dashboard-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 18px;
+    margin-bottom: 25px;
+}
+
+.panel-header h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.panel-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: black;
+    background: var(--gold-gradient);
+    padding: 3px 12px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+/* Cashier form specific styling */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.col-6 {
+    width: calc(50% - 10px);
+}
+
+.price-display {
+    background: rgba(212, 175, 55, 0.04);
+    border: 1px dashed var(--gold-primary);
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.price-display span {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.price-value {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Visual Agenda of Occupied Slots in Cashier Panel */
+.admin-daily-agenda {
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 20px;
+}
+
+.admin-daily-agenda h4 {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: var(--gold-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.admin-booked-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.admin-booked-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-left: 3px solid #e74c3c; /* Red color indicator for booked times */
+    border-radius: 4px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.booked-time {
+    font-weight: 700;
+}
+
+.booked-details {
+    color: var(--text-muted);
+}
+
+.no-booked-slots {
+    font-size: 0.85rem;
+    color: var(--status-available);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(46, 204, 113, 0.05);
+    border: 1px solid rgba(46, 204, 113, 0.1);
+    border-radius: 4px;
+    padding: 12px 15px;
+}
+
+/* Report Panel visual styling */
+.performance-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.report-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--gold-border);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.report-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold-primary);
+}
+
+.report-logo-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-primary);
+    object-fit: cover;
+}
+
+.report-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.barbers-performance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.barber-report-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid var(--gold-primary);
+    border-radius: 0 4px 4px 0;
+    transition: var(--transition-smooth);
+}
+
+.barber-report-item:hover {
+    background: rgba(212, 175, 55, 0.05);
+    border-left-width: 4px;
+}
+
+.barber-rep-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.barber-rep-value {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--gold-primary);
+}
+
+.total-performance-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 18px;
+    font-weight: 700;
+}
+
+.total-label {
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.total-val {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.report-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.help-text {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.help-text p {
+    margin-bottom: 6px;
+}
+
+.help-text ul {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.help-text li {
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.help-text li::before {
+    content: '•';
+    color: var(--gold-primary);
+    position: absolute;
+    left: 0;
+}
+
+/* Modals styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: var(--bg-card);
+    border: 1px solid var(--gold-primary);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 480px;
+    padding: 30px;
+    box-shadow: var(--shadow-gold-heavy);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 1.15rem;
+    text-transform: uppercase;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--gold-primary);
+}
+
+.booking-summary-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summary-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.summary-label i {
+    color: var(--gold-primary);
+    width: 15px;
+}
+
+.summary-val {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Floating WhatsApp Call to Action */
+.floating-whatsapp-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.floating-whatsapp-cta:hover {
+    background: #20ba5a;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+
+.cta-tooltip {
+    position: absolute;
+    right: 75px;
+    background: rgba(6, 6, 6, 0.95);
+    border: 1px solid var(--gold-border);
+    color: var(--gold-primary);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: var(--transition-smooth);
+    white-space: nowrap;
+    box-shadow: var(--shadow-gold);
+}
+
+.floating-whatsapp-cta:hover .cta-tooltip {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Footer Section styling */
+footer {
+    border-top: 1px solid var(--gold-border);
+    background-color: var(--bg-darkest);
+    padding: 60px 20px 25px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.footer-logo-img-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-primary);
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-gold);
+}
+
+.footer-info {
+    max-width: 600px;
+}
+
+.footer-info h3 {
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slogan-footer {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    padding-top: 25px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Animations declarations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.1);
+        border-color: rgba(212, 175, 55, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        border-color: rgba(212, 175, 55, 0.8);
+    }
+}
+
+/* Appointment Delete button inside admin list */
+.btn-delete-appt {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-size: 1.05rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: var(--transition-smooth);
+    margin-left: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-delete-appt:hover {
+    color: #ff6b6b;
+    background: rgba(231, 76, 60, 0.15);
+    transform: scale(1.15);
+}

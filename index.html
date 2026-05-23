@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Razor Barbershop - Detalles que valen oro</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="index.css">
+    <!-- jsPDF CDN for Report Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Top Elegant Navigation Bar -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <img src="images/logo.jpg" alt="Golden Razor Logo" class="header-logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">GOLDEN RAZOR</span>
+                    <span class="logo-slogan">Detalles que valen oro</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#inicio" class="nav-item active"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="#agenda" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Agenda</a>
+                <a href="#admin-section" class="nav-item" id="admin-nav-btn"><i class="fa-solid fa-lock"></i> Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container (SPA) -->
+    <main>
+        
+        <!-- SECTION 1: INICIO (Pública) -->
+        <section id="inicio" class="spa-section active">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-badge">EXPERIENCIA PREMIUM</span>
+                    <h1 class="hero-title">Elegancia, Precisión <br>y Estilo</h1>
+                    <p class="hero-slogan">"Detalles que valen oro"</p>
+                    <a href="#agenda" class="btn btn-gold btn-large scroll-trigger"><i class="fa-solid fa-calendar-check"></i> Haz tu Reserva</a>
+                </div>
+            </div>
+
+            <!-- Nuestro Equipo -->
+            <div class="section-container">
+                <h2 class="section-title"><span class="gold-text">Nuestro</span> Equipo</h2>
+                <p class="section-subtitle">Profesionales del arte de la barbería listos para brindarte el mejor servicio</p>
+                
+                <div class="barbers-grid">
+                    <!-- Barber 1 -->
+                    <div class="barber-card">
+                        <div class="barber-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="barber-name">Gabriel Dávila</h3>
+                        <p class="barber-role">Especialista en Fades</p>
+                    </div>
+                    <!-- Barber 2 -->
+                    <div class="barber-card">
+                        <div class="barber-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="barber-name">Génesis</h3>
+                        <p class="barber-role">Estilo Moderno & Perfilado</p>
+                    </div>
+                    <!-- Barber 3 -->
+                    <div class="barber-card">
+                        <div class="barber-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="barber-name">Leonardo</h3>
+                        <p class="barber-role">Cortes Clásicos & Navaja</p>
+                    </div>
+                    <!-- Barber 4 -->
+                    <div class="barber-card">
+                        <div class="barber-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="barber-name">Gabriel Díaz</h3>
+                        <p class="barber-role">Diseño & Freestyle</p>
+                    </div>
+                    <!-- Barber 5 -->
+                    <div class="barber-card">
+                        <div class="barber-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="barber-name">Heidy</h3>
+                        <p class="barber-role">Corte & Tratamiento Capilar</p>
+                    </div>
+                    <!-- Barber 6 -->
+                    <div class="barber-card">
+                        <div class="barber-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <h3 class="barber-name">Rubén</h3>
+                        <p class="barber-role">Cuidado & Perfilado de Barba</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catálogo de Tendencias -->
+            <div class="section-container bg-darker">
+                <h2 class="section-title">Catálogo de <span class="gold-text">Tendencias</span></h2>
+                <p class="section-subtitle">Los cortes y estilos más solicitados por nuestros clientes</p>
+                
+                <div class="trends-gallery">
+                    <div class="trend-item">
+                        <img src="images/Mid Fade.jpg" alt="Corte Moderno Fade" class="trend-img">
+                        <div class="trend-overlay">
+                            <h3 class="trend-title">Mid Fade</h3>
+                            <p class="trend-desc">Degradado perfecto con línea ultra definida.</p>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="images/Corte Clasico.png" alt="Corte Clásico Pompadour" class="trend-img">
+                        <div class="trend-overlay">
+                            <h3 class="trend-title">Clasico</h3>
+                            <p class="trend-desc">Volumen clásico y estilo distinguido para caballeros.</p>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="images/Taper Fade.webp" alt="Perfilado de Barba" class="trend-img">
+                        <div class="trend-overlay">
+                            <h3 class="trend-title">Taper Fade</h3>
+                            <p class="trend-desc">Cuidado y alineación precisa con toalla caliente.</p>
+                        </div>
+                    </div>
+                    <div class="trend-item">
+                        <img src="images/Mohicano.jpg" alt="Combo Corte y Barba" class="trend-img">
+                        <div class="trend-overlay">
+                            <h3 class="trend-title">Mohicano</h3>
+                            <p class="trend-desc">Corte premium y spa de barba completo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicios -->
+            <div class="section-container">
+                <h2 class="section-title">Nuestros <span class="gold-text">Servicios</span></h2>
+                <p class="section-subtitle">Precios configurados para brindarte la mejor relación de valor</p>
+                
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+                        <h3 class="service-title">Corte</h3>
+                        <div class="service-price">6 $</div>
+                        <p class="service-desc">Corte de cabello premium adaptado a tu rostro, lavado y peinado con cera.</p>
+                    </div>
+                    
+                    <div class="service-card special-card">
+                        <div class="special-badge">MÁS POPULAR</div>
+                        <div class="service-icon"><i class="fa-solid fa-mustache"></i></div>
+                        <h3 class="service-title">Corte y Barba</h3>
+                        <div class="service-price">8 $</div>
+                        <p class="service-desc">Servicio completo de corte con lavado más perfilado y afeitado de barba con ritual de toalla.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-razor"></i></div>
+                        <h3 class="service-title">Barba</h3>
+                        <div class="service-price">3 $</div>
+                        <p class="service-desc">Perfilado, rebajado y afeitado detallado a navaja tradicional con aceites hidratantes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: AGENDA (Pública / Interactiva) -->
+        <section id="agenda" class="spa-section">
+            <div class="section-container">
+                <h2 class="section-title"><span class="gold-text">Disponibilidad</span> en Tiempo Real</h2>
+                <p class="section-subtitle">Consulta los turnos disponibles antes de concretar tu reserva</p>
+                
+                <div class="agenda-wrapper">
+                    <!-- Configuración y Selección de barberos -->
+                    <div class="agenda-controls">
+                        <div class="control-group">
+                            <label class="control-label"><i class="fa-solid fa-calendar-days"></i> Selecciona la Fecha:</label>
+                            <input type="date" id="public-date-picker" class="date-input">
+                        </div>
+                        
+                        <div class="control-group">
+                            <label class="control-label"><i class="fa-solid fa-user-check"></i> Selecciona tu Barbero:</label>
+                            <div class="barbers-tabs" id="public-barber-tabs">
+                                <!-- Barber tabs will be rendered here dynamically -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horarios Grid -->
+                    <div class="schedule-container">
+                        <div class="schedule-header">
+                            <h3><i class="fa-solid fa-clock gold-icon"></i> Turnos de 45 minutos (8:00 AM - 5:00 PM)</h3>
+                            <div class="legend">
+                                <span class="legend-item"><span class="color-dot available"></span> Disponible</span>
+                                <span class="legend-item"><span class="color-dot booked"></span> Agendado</span>
+                            </div>
+                        </div>
+                        
+                        <div class="slots-grid" id="public-slots-grid">
+                            <!-- Slots will be rendered here dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ADMINISTRADOR (100% Privada) -->
+        <section id="admin-section" class="spa-section">
+            
+            <!-- LOGIN VIEW -->
+            <div id="login-container" class="login-box-wrapper active">
+                <div class="login-box">
+                    <div class="login-logo">
+                        <img src="images/logo.jpg" alt="Golden Razor Logo" class="login-logo-img">
+                        <h2>LOGIN DE ADMINISTRADOR</h2>
+                        <p>Ingresa tus credenciales seguras</p>
+                    </div>
+                    
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email"><i class="fa-solid fa-envelope"></i> Usuario:</label>
+                            <input type="email" id="login-email" required placeholder="admin@tubarberia.com" value="admin@tubarberia.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password"><i class="fa-solid fa-key"></i> Contraseña:</label>
+                            <input type="password" id="login-password" required placeholder="Contraseña de administrador" value="AdminOro2026">
+                        </div>
+                        
+                        <div id="login-error-msg" class="error-msg hide">
+                            <i class="fa-solid fa-triangle-exclamation"></i> Credenciales incorrectas.
+                        </div>
+                        
+                        <button type="submit" class="btn btn-gold btn-block" id="login-submit-btn">
+                            <span id="login-btn-text"><i class="fa-solid fa-right-to-bracket"></i> INGRESAR</span>
+                            <span id="login-btn-spinner" class="spinner hide"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- DASHBOARD VIEW -->
+            <div id="dashboard-container" class="dashboard-wrapper hide">
+                <div class="dashboard-header">
+                    <div class="welcome-text">
+                        <h2><i class="fa-solid fa-circle-user gold-icon"></i> Panel de Administración</h2>
+                        <p>Gestión interna de caja, citas y reportes de rendimiento</p>
+                    </div>
+                    <button class="btn btn-outline" id="logout-btn"><i class="fa-solid fa-power-off"></i> Cerrar Sesión</button>
+                </div>
+
+                <div class="dashboard-grid">
+                    
+                    <!-- PANEL A: AGENDAMIENTO INTERNO Y CAJA -->
+                    <div class="dashboard-panel panel-caja">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-cash-register gold-icon"></i> Agendamiento Interno y Caja</h3>
+                            <span class="panel-tag">Caja Activa</span>
+                        </div>
+                        
+                        <form id="cashier-booking-form" class="panel-form">
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="cashier-barbero"><i class="fa-solid fa-user-large"></i> Barbero:</label>
+                                    <select id="cashier-barbero" required class="form-control-select">
+                                        <!-- Options added dynamically -->
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="cashier-fecha"><i class="fa-solid fa-calendar-day"></i> Fecha:</label>
+                                    <input type="date" id="cashier-fecha" required class="form-control-input">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="cashier-hora"><i class="fa-solid fa-clock"></i> Hora disponible:</label>
+                                    <select id="cashier-hora" required class="form-control-select">
+                                        <!-- Slots filled dynamically -->
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="cashier-servicio"><i class="fa-solid fa-tags"></i> Servicio:</label>
+                                    <select id="cashier-servicio" required class="form-control-select">
+                                        <option value="Solo Corte" data-price="6.00">Solo Corte - $6.00</option>
+                                        <option value="Solo Barba" data-price="3.00">Solo Barba - $3.00</option>
+                                        <option value="Corte y Barba" data-price="8.00">Corte y Barba - $8.00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cashier-cliente"><i class="fa-solid fa-id-card"></i> Nombre del Cliente:</label>
+                                <input type="text" id="cashier-cliente" required placeholder="Escribe el nombre del cliente" class="form-control-input">
+                            </div>
+                            
+                            <div class="price-display">
+                                <span>Precio Calculado:</span>
+                                <span class="price-value" id="cashier-calculated-price">$6.00</span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-gold btn-block" id="cashier-submit-btn">
+                                <i class="fa-solid fa-calendar-plus"></i> Agendar Cita
+                            </button>
+                        </form>
+
+                        <!-- Visual Agenda of Occupied slots for the Selected Barber / Date (Blocks double booking) -->
+                        <div class="admin-daily-agenda">
+                            <h4><i class="fa-solid fa-calendar-check gold-text"></i> Citas Programadas del Día:</h4>
+                            <div class="admin-booked-slots" id="admin-booked-slots-list">
+                                <!-- Loaded dynamically: lists occupied slots or "No hay citas programadas" -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- PANEL B: MATRIZ DE RENDIMIENTO DIARIO Y REPORTES -->
+                    <div class="dashboard-panel panel-reportes">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-chart-line gold-icon"></i> Rendimiento Mensual de Barberos</h3>
+                            <span class="panel-tag">Reportes</span>
+                        </div>
+                        
+                        <div class="performance-card">
+                            <div class="report-box-header">
+                                <div class="report-logo">
+                                    <img src="images/logo.jpg" alt="Golden Razor Logo" class="report-logo-img">
+                                    <span>REPORTE DE INGRESOS</span>
+                                </div>
+                                <div class="report-date" id="report-current-date">Fecha: --/--/----</div>
+                            </div>
+                            
+                            <div class="barbers-performance-list" id="barbers-performance-list">
+                                <!-- Loaded dynamically -->
+                            </div>
+                            
+                            <div class="total-performance-row">
+                                <span class="total-label">TOTAL GENERADO GENERAL:</span>
+                                <span class="total-val" id="total-generated-general">$0.00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="report-actions">
+                            <button class="btn btn-outline col-6" id="btn-print-report">
+                                <i class="fa-solid fa-print"></i> Imprimir Reporte
+                            </button>
+                            <button class="btn btn-danger col-6" id="btn-reset-month">
+                                <i class="fa-solid fa-calendar-check"></i> Finalizado el Mes
+                            </button>
+                        </div>
+                        
+                        <div class="help-text">
+                            <p><strong><i class="fa-solid fa-circle-info gold-text"></i> Información de los botones:</strong></p>
+                            <ul>
+                                <li><strong>Imprimir:</strong> Genera y abre el reporte PDF en una nueva pestaña sin reiniciar montos.</li>
+                                <li><strong>Finalizado el Mes:</strong> Descarga el PDF y ejecuta la limpieza (reinicia todos los contadores de la pantalla a $0).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <!-- Public Floating Call to Action Button for WhatsApp -->
+    <a href="#" class="floating-whatsapp-cta" id="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="cta-tooltip">Haz tu reserva</span>
+    </a>
+
+    <!-- Booking Confirmation Modal (Public Side) -->
+    <div id="booking-modal" class="modal-overlay hide">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-calendar-check gold-icon"></i> Detalles de tu Reserva</h3>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="booking-summary-card">
+                    <div class="summary-item">
+                        <span class="summary-label"><i class="fa-solid fa-user-large"></i> Barbero:</span>
+                        <span class="summary-val" id="modal-summary-barber">--</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label"><i class="fa-solid fa-calendar-day"></i> Fecha:</span>
+                        <span class="summary-val" id="modal-summary-date">--</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label"><i class="fa-solid fa-clock"></i> Horario:</span>
+                        <span class="summary-val" id="modal-summary-time">--</span>
+                    </div>
+                </div>
+                
+                <form id="public-booking-form">
+                    <div class="form-group">
+                        <label for="public-client-name"><i class="fa-solid fa-id-card"></i> Tu Nombre:</label>
+                        <input type="text" id="public-client-name" required placeholder="Escribe tu nombre completo" class="form-control-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="public-service"><i class="fa-solid fa-tags"></i> Servicio:</label>
+                        <select id="public-service" required class="form-control-select">
+                            <option value="Corte" data-price="6.00">Corte - 6 $</option>
+                            <option value="Corte y barba" data-price="8.00">Corte y barba - 8 $</option>
+                            <option value="Barba" data-price="3.00">Barba - 3 $</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-gold btn-block"><i class="fa-brands fa-whatsapp"></i> Confirmar y Reservar en WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <img src="images/logo.jpg" alt="Golden Razor Logo" class="footer-logo-img-large">
+                <h3>GOLDEN RAZOR</h3>
+                <p class="slogan-footer">"Detalles que valen oro"</p>
+                <div class="footer-contacts">
+                    <p><i class="fa-solid fa-phone gold-text"></i> WhatsApp: 04149101195</p>
+                    <p><i class="fa-solid fa-location-dot gold-text"></i> Av. Principal de la Ciudad, Local 2</p>
+                    <p><i class="fa-solid fa-clock gold-text"></i> Lunes a Sábado: 8:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Golden Razor Barbershop. Todos los derechos reservados. Diseñado con detalles dorados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- App Script logic -->
+    <script src="app.js"></script>
+</body>
+</html>
